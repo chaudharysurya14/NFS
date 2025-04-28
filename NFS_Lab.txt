@@ -40,8 +40,8 @@ df -Th							#show mount storage
 With firewall:
 -----------------
 systemctl start firewalld
-firewall-cmd --add-service=mountd--permanent
-firewall-cmd --add-service=mountd--permanent
-firewall-cmd --add-service=mountd--permanent
+firewall-cmd --add-service=mountd --permanent
+firewall-cmd --add-service=mountd --permanent
+firewall-cmd --add-service=mountd --permanent
 firewall-cmd --reload
 
