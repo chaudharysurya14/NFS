@@ -6,29 +6,29 @@ Without firewall:
 on master:-
 ----------------
 yum install nfs-utils					#install nfs-utils
-yum install nfs4*						#install nfs-utils version 4
+yum install nfs4*					#install nfs-utils version 4
 rpm -qa | grep nfs					#show nfs file which u install
 mkdir shital						#create a directory
 cd shital
-	touch file1 file2					#creat efile in directory
+	touch file1 file2				#creat efile in directory
 systemctl start nfs					#start nfs service
 systemctl stop firewalld				#stop firewall service
-vi /etc/exportfs						#create a file
-	/root/shital *(rw,sync,no_root_squash)	#write this in file as same
+vi /etc/exportfs					#create a file
+	/root/shital *(rw,sync,no_root_squash)		#write this in file as same
 systemctl restart nfs					#restart nfs service
 exportfs -arv						#show file export or not
 
 on client:-
 -----------
 yum install nfs-utils					#install nfs-utils
-yum install nfs4*						#install nfs-utils version 4
+yum install nfs4*					#install nfs-utils version 4
 rpm -qa | grep nfs					#show nfs file which u install
 mkdir surya
 cd shital
 	touch file3 file4
 systemctl start nfs
 systemctl stop firewalld
-mount -t nfs master:/root/shital /root/surya	#mount client and master directory
+mount -t nfs master:/root/shital /root/surya		#mount client and master directory
 
 
  ls
