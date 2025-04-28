@@ -24,7 +24,7 @@ yum install nfs-utils					#install nfs-utils
 yum install nfs4*					#install nfs-utils version 4
 rpm -qa | grep nfs					#show nfs file which u install
 mkdir surya
-cd shital
+cd surya
 	touch file3 file4
 systemctl start nfs
 systemctl stop firewalld
@@ -34,7 +34,7 @@ mount -t nfs master:/root/shital /root/surya		#mount client and master directory
  ls
 file1 file2 file3 file4					#show on both system
 df -Th							#show mount storage
-#vi /etc/fstab 
+#vi /etc/fstab 						# For permanent mount storage
 
 
 With firewall:
